@@ -1,0 +1,8 @@
+config
+<<<<<<< HEAD
+.idea/**
+=======
+/nbproject/private/
+>>>>>>> 1338335ea96b0fde021b08a210b2e8d3bf555dbe
+
+public/node_modules

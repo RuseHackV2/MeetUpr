@@ -1,0 +1,483 @@
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "../bower_components/bootstrap/less/variables.less";
+@import "../bower_components/bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "../bower_components/bootstrap/less/normalize.less";
+@import "../bower_components/bootstrap/less/print.less";
+@import "../bower_components/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../bower_components/bootstrap/less/scaffolding.less";
+@import "../bower_components/bootstrap/less/type.less";
+@import "../bower_components/bootstrap/less/code.less";
+@import "../bower_components/bootstrap/less/grid.less";
+@import "../bower_components/bootstrap/less/tables.less";
+@import "../bower_components/bootstrap/less/forms.less";
+@import "../bower_components/bootstrap/less/buttons.less";
+
+// Components
+@import "../bower_components/bootstrap/less/component-animations.less";
+@import "../bower_components/bootstrap/less/dropdowns.less";
+@import "../bower_components/bootstrap/less/button-groups.less";
+@import "../bower_components/bootstrap/less/input-groups.less";
+@import "../bower_components/bootstrap/less/navs.less";
+@import "../bower_components/bootstrap/less/navbar.less";
+@import "../bower_components/bootstrap/less/breadcrumbs.less";
+@import "../bower_components/bootstrap/less/pagination.less";
+@import "../bower_components/bootstrap/less/pager.less";
+@import "../bower_components/bootstrap/less/labels.less";
+@import "../bower_components/bootstrap/less/badges.less";
+@import "../bower_components/bootstrap/less/jumbotron.less";
+@import "../bower_components/bootstrap/less/thumbnails.less";
+@import "../bower_components/bootstrap/less/alerts.less";
+@import "../bower_components/bootstrap/less/progress-bars.less";
+@import "../bower_components/bootstrap/less/media.less";
+@import "../bower_components/bootstrap/less/list-group.less";
+@import "../bower_components/bootstrap/less/panels.less";
+@import "../bower_components/bootstrap/less/responsive-embed.less";
+@import "../bower_components/bootstrap/less/wells.less";
+@import "../bower_components/bootstrap/less/close.less";
+
+// Components w/ JavaScript
+@import "../bower_components/bootstrap/less/modals.less";
+@import "../bower_components/bootstrap/less/tooltip.less";
+@import "../bower_components/bootstrap/less/popovers.less";
+@import "../bower_components/bootstrap/less/carousel.less";
+
+// Utility classes
+@import "../bower_components/bootstrap/less/utilities.less";
+@import "../bower_components/bootstrap/less/responsive-utilities.less";
+
+@brand-info: #2E75DE;
+@brand-warning: #f9a014;
+@brand-danger: #DC234C;
+@brand-success: #0DA37A;
+@gray-darker: #241f19;
+@text-color: #2a2b2a;
+
+@state-warning-bg: fade(desaturate(@brand-warning, 20%), 80%);
+@state-warning-border: fade(@brand-warning, 80%);
+@state-warning-text: #fff;
+
+body {
+  padding-top: 50px;
+  background: #F9F8F6;
+  background-attachment: fixed;
+  font-family:  'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.6em;
+}
+
+body > .container:first-child {
+  padding-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Alice', 'Lato', serif;
+}
+
+section {
+  margin: 2em 0;
+}
+
+footer {
+  padding: 2em 0;
+  background-color: #333;
+  color: #fff;
+}
+
+h1 {
+  margin: 1em 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 52px;
+}
+img {
+  max-width: 100%;
+}
+
+.navbar-btn {
+  margin-left: 16px;
+}
+.navbar-brand {
+  font-size: 2em;
+  font-family: 'Alice', 'Lato', serif;
+  position: relative;
+  padding-top: 0;
+  span {
+    position: absolute;
+    width: 160px;
+    height: 110px;
+    background: #241F19;
+    line-height: 120px;
+    border-radius: 50%;
+    top: -25px;
+    padding-top: 29px;
+    text-align: center;
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: 30px;
+    }
+  }
+
+}
+
+.btn-primary {
+  background-color: #0862e8;
+}
+.btn-primary:hover {
+  background: #0656CC;
+}
+
+/* Homepage sliders */
+.slick-slide {
+  padding: 10px;
+}
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-slider {
+  margin-bottom: 50px;
+}
+
+.navbar-default {
+  background: @gray-darker;
+  border-color: @gray-darker;
+  box-shadow: 0 2px 15px rgba(0,0,0,.2);
+  .fa-bell {
+    color: @brand-danger;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: @gray-lighter;
+  //font-family: 'Alice', 'Lato', serif;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: darken(@gray-lighter, 15%);
+  text-shadow: none;
+  background: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li.open > a:active,
+.navbar-default .navbar-nav > li.open > a:focus {
+  background: transparent;
+}
+
+.btn {
+  font-family: 'Alice', 'Lato', serif;
+}
+.btn-lg {
+}
+
+/* Homepage map */
+#map-near-events {
+  height: 600px;
+}
+
+.home-nearby-events {
+  display: flex;
+}
+
+/*events list*/
+.event-categories {
+  margin-top: @line-height-computed;
+  &.nav-pills {
+    li ,
+    li.active {
+        a,
+        a:hover,
+        a:active,
+        a:focus {
+          background:transparent;
+          border-radius: 0;
+          border-bottom: 1px solid @gray-lighter;
+          color: @text-color;
+          font-weight: 900;
+        }
+      }
+    li.active {
+      a {
+       color: @brand-warning;
+        cursor: default;
+        &:hover,
+        &:focus {
+          color: @brand-warning;
+        }
+      }
+    }
+  }
+}
+.event-list {
+  margin-top: @line-height-computed;
+  .panel-default {
+    border-color: @gray-darker;
+    border-radius:  @border-radius-small;
+  }
+  .panel-heading {
+    background-color: @gray-darker;
+    border-radius: @border-radius-small @border-radius-small 0 0;
+  }
+  .panel-title {
+    font-size: @font-size-h4;
+    color: #fff;
+    a {
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .event-date {
+      font-size: @font-size-base;
+      font-weight: 300;
+      line-height: @font-size-h4*1.1;
+    }
+  }
+  .players-count {
+    display: block;
+    margin-bottom: @line-height-computed;
+  }
+  .event-applied {
+    .event-date {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}
+.fa-male {
+  color: @gray-darker;
+  &.empty {
+    color: lighten(@gray-light, 10%);
+  }
+}
+.label {
+  font-size: 12px;
+  &.approved {
+    .label-success();
+  }
+  &.pending {
+    .label-warning();
+  }
+}
+.event-meta {
+  margin-top: @line-height-computed;
+  margin-bottom: @line-height-computed;
+  .players-count {
+    margin: 0;
+    font-size: @font-size-base*1.4;
+  }
+}
+.event-players-table {
+  .player {
+    img {
+      max-width: 40px;
+    }
+    .label {
+      display: inline-block;
+      margin: 2px;
+    }
+  }
+}
+
+#singleEventMap {
+  //margin-bottom: -40px;
+  margin-top: @line-height-computed;
+}
+
+.host {
+  .user-info {
+    display: inline-block;
+  }
+}
+
+.page-banner {
+  padding: (@line-height-computed*2) 0;
+  background: url('/img/banner-tavern-2.jpg');
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  margin-bottom: (@line-height-computed/2);
+
+  .page-header {
+    color: #fff;
+    border: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .page-header-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: fade(#000, 50%);
+  }
+  &.page-events {
+    background-image: url('/img/banner-tavern-2.jpg');
+  }
+}
+
+.modal-content {
+  border: 0;
+  box-shadow: none;
+}
+.modal-content {
+  overflow: hidden;
+}
+.game-header {
+  position: relative;
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.game-header:after {
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  content: '';
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;left: 0;
+  right: 0; bottom: 0;
+}
+.game-header .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 1;
+  font-size: 3em;
+  text-shadow: none;
+  opacity: 1;
+  color: #fff;
+  /*top: -40px;
+  right: -40px;*/
+}
+.game-header:hover:after {
+  background: rgba(0, 0, 0, 0.6);
+}
+.game-header-data {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.game-header small {
+  display: block;
+  font-size: 0.8em;
+}
+.game-header h1 a,
+.game-header h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+.game-header h1 a:hover,
+.game-header h2 a:hover {
+  text-decoration: underline;
+}
+.game-header p img {
+  border: 2px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+
+.alert, .host {
+  img {
+    display: inline-block;
+    vertical-align:top;
+    margin-right: (@grid-gutter-width/2);
+    width: 100px;
+    height: auto;
+  }
+  .user-info {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 600;
+    width: calc(~'100% - 125px');
+    a:not(.btn) {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+}
+.host {
+  .user-info {
+    font-weight: 300;
+  }
+}
+
+.create-event-form {
+  margin-top:@line-height-computed;
+}
+
+html {
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 160px;
+  & > footer {
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+//Notification unseen
+.notification-unseen {
+  background: lighten(@brand-info, 30%);
+}
+
+.select2-choice {
+  height: 33px;
+}
+
+.form-control {
+  font-weight: 600;
+}
+
+.search-event {
+  text-align: center;
+  margin: 0;
+}
+.search-event .select2-choice {
+  max-width: 260px;
+}
+.search-event-wrap  {
+  margin-top: -2em;
+  padding: 2.5em 0;
+  margin-bottom: 0;
+  @media(min-width: @screen-md-min) {
+    padding: 2em 0;
+  }
+}
